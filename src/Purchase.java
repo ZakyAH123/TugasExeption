@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Purchase extends SuperMarket implements iPurchaceData {
@@ -6,6 +7,8 @@ class Purchase extends SuperMarket implements iPurchaceData {
     double productPrice;
     int quantity;
     double totalPayment;
+    boolean input = true;
+
 
     Purchase(String marketName, String cashier) {
         super(marketName, cashier);
@@ -19,8 +22,19 @@ class Purchase extends SuperMarket implements iPurchaceData {
         productCode = scanner.nextLine();
         System.out.print("Nama Barang   : ");
         productName = scanner.nextLine();
-        System.out.print("Harga Barang  : ");
-        productPrice = scanner.nextDouble();
+        
+        do {
+            try {
+                System.out.print("Harga Barang  : ");
+                productPrice = scanner.nextDouble();
+                input = false;
+            } catch (InputMismatchException e) {
+                System.out.println("bukanlah angka, coba lagi");
+                scanner.next();
+            }
+        } while (input);
+
+
         System.out.print("Jumlah Beli   : ");
         quantity = scanner.nextInt();
 

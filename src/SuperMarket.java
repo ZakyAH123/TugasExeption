@@ -1,6 +1,8 @@
+import java.util.Scanner;
 abstract class SuperMarket {
     String supermarketName;
     String cashier;
+    Scanner scan = new Scanner(System.in);
 
     SuperMarket(String name, String cashier) {
         this.supermarketName = name;
@@ -10,7 +12,8 @@ abstract class SuperMarket {
     void displaySupermarketInfo() {
         System.out.println("-------ACIAK CORE-------");
         System.out.println("========================");
-        System.out.print("Kasir    : " + cashier);
+        System.out.print("Kasir    : ");
+        cashier = scan.nextLine();
         System.out.println("\n========================");
     }
 }
