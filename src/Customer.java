@@ -17,6 +17,7 @@ class Customer extends SuperMarket implements iCustomerData {
         customerName = scanner.nextLine();
         System.out.print("Alamat         : ");
         customerAddress = scanner.nextLine();
+        System.out.println("========================");
 
     }
     

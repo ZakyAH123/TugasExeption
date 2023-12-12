@@ -14,6 +14,6 @@ abstract class SuperMarket {
         System.out.println("========================");
         System.out.print("Kasir    : ");
         cashier = scan.nextLine();
-        System.out.println("\n========================");
+        System.out.println("========================");
     }
 }
